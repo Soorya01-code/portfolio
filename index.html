@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soorya S S - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --primary-color: #3a86ff;
+      --dark-color: #1e1e2c;
+      --light-color: #f8f9fa;
+      --accent-color: #ff9f1c;
+      --text-color: #333;
+      --section-padding: 5rem 2rem;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(120deg, var(--dark-color), #2c3e50);
+      color: white;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover:after {
+      width: 100%;
+    }
+    
+    section {
+      padding: var(--section-padding);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: var(--dark-color);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+    }
+    
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    
+    .about-img-container {
+      flex-shrink: 0;
+    }
+    
+    .about-img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 5px solid white;
+    }
+    
+    .about-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .achievements-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .achievement-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .achievement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .achievement-card i {
+      color: var(--accent-color);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .job {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .job h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .job p {
+      margin-bottom: 1rem;
+    }
+    
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-content h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .project-content p {
+      margin-bottom: 1rem;
+    }
+    
+    .skills-container {
+      margin-top: 2rem;
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+    }
+    
+    .skill-item {
+      background: white;
+      color: var(--dark-color);
+      padding: 0.7rem 1.3rem;
+      border-radius: 50px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .skill-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .skill-item i {
+      color: var(--primary-color);
+    }
+    
+    .contact-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .contact-info i {
+      color: var(--primary-color);
+      margin-right: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    footer {
+      background: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      nav {
+        justify-content: center;
+      }
+      
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .about-img-container {
+        margin-bottom: 2rem;
+      }
+      
+      .section-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>Soorya Sakthivel</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-container">
+      <div class="about-img-container">
+        <img src="soorya_png.png" alt="Soorya S S" class="about-img"/>
+      </div>
+      <div class="about-content">
+        <p>
+          Hello! I'm <strong>Soorya S S</strong>, a passionate Front-end developer specializing in creating user-friendly, visually engaging websites. I enjoy bringing creative ideas to life using modern tools and technologies.
+        </p>
+        <p>
+          With a strong foundation in web development and a keen eye for design, I strive to build applications that not only function flawlessly but also provide exceptional user experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2 class="section-title">Achievements</h2>
+    <div class="achievements-list">
+      <div class="achievement-card">
+        <i class="fas fa-trophy"></i>
+        <p>1st Place in "Project Expo" conducted in the Academic year 2023-24 by the department of Computer Science Engineering</p>
+      </div>
+      <div class="achievement-card">
+        <i class="fas fa-award"></i>
+        <p>Awarded as Best Outgoing Student in the Academic Year 2020-21 for Academic excellence and Sports excellence</p>
+      </div>
+      <div class="achievement-card">
+        <i class="fas fa-medal"></i>
+        <p>Sports Excellence (CRICKET) - Winners in the academic year 2023-24 and Runners in the academic year 2024-25</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="job">
+      <h3>JUNIOR DEVELOPER - Software Development Cell, PSG iTech</h3>
+      <p><strong>April 2024 – Present</strong></p>
+      <p>• Gained hands-on experience in Web Development and Deployment, contributing to innovative projects and collaborating with the team to enhance software solutions.</p>
+      <p>• Recently completed a <strong>Student Printing Service web application for my college, benefiting over 200 students daily</strong>, currently working on a College Canteen Web Application.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <div class="project-content">
+          <h3><strong>Docu Talk</strong></h3>
+          <p>• Built a PDF chatbot that lets users upload large documents and ask questions directly in chat. The chatbot searches the PDF and gives accurate answers to improve learning and document access.</p>
+          <p>• Technology Used: Langchain, Ollama, Nomic Embed system(LLM), pypdf2, dotenv, chainlit.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3><strong>Student Printing Service</strong></h3>
+          <p>• Developed and launched a Student Printing Service Web Application for my college, used by over 200 students daily. The system allows students to upload documents for printout from anywhere and collect the printout using the order ID.</p>
+          <p>• <strong>Currently live</strong> and actively benefiting the college community. It streamlines the printing process and improves accessibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-container">
+      <ul class="skill-list">
+        <li class="skill-item"><i class="fab fa-python"></i> Python</li>
+        <li class="skill-item"><i class="fab fa-java"></i> Java (DSA)</li>
+        <li class="skill-item"><i class="fas fa-code"></i> C</li>
+        <li class="skill-item"><i class="fab fa-html5"></i> HTML</li>
+        <li class="skill-item"><i class="fab fa-css3-alt"></i> CSS</li>
+        <li class="skill-item"><i class="fab fa-js"></i> JavaScript</li>
+        <li class="skill-item"><i class="fab fa-react"></i> React.js</li>
+        <li class="skill-item"><i class="fas fa-database"></i> MySQL</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:sooryasakthivel01@gmail.com">sooryasakthivel01@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Soorya S S. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
