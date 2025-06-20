@@ -240,15 +240,16 @@
     .modal-content {
       position: relative;
       margin: auto;
-      padding: 0;
+      padding: 20px;
       width: 90%;
-      max-width: 800px;
+      max-width: 900px;
       top: 50%;
       transform: translateY(-50%);
       background: white;
       border-radius: 15px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
       animation: slideIn 0.3s;
+      text-align: center;
     }
 
     @keyframes fadeIn {
@@ -257,52 +258,31 @@
     }
 
     @keyframes slideIn {
-      from {transform: translateY(-50px) translateX(-50%);}
-      to {transform: translateY(-50%) translateX(0);}
+      from {transform: translateY(-50px);}
+      to {transform: translateY(-50%);}
     }
 
-    .certificate-display {
-      padding: 3rem;
-      text-align: center;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      border-radius: 15px;
-      position: relative;
-    }
-
-    .certificate-display::before {
-      content: '';
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      border: 3px solid var(--primary-color);
+    .certificate-image {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
       border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin: 20px 0;
     }
 
-    .certificate-display h2 {
+    .certificate-title {
       color: var(--dark-color);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      position: relative;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
 
-    .certificate-display .certificate-icon {
-      font-size: 4rem;
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-    }
-
-    .certificate-display .certificate-details {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      color: var(--text-color);
-    }
-
-    .certificate-display .certificate-note {
-      font-style: italic;
+    .certificate-note {
       color: #666;
       font-size: 0.9rem;
+      font-style: italic;
+      margin-top: 15px;
     }
 
     .close {
@@ -468,14 +448,15 @@
       .modal-content {
         width: 95%;
         margin: 5% auto;
+        padding: 15px;
       }
 
-      .certificate-display {
-        padding: 2rem 1rem;
+      .certificate-image {
+        max-height: 60vh;
       }
 
-      .certificate-display h2 {
-        font-size: 1.5rem;
+      .certificate-title {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -583,96 +564,54 @@
   <div id="fullstack-cert" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="certificate-display">
-        <i class="fas fa-code certificate-icon"></i>
-        <h2>Full Stack Development Certificate</h2>
-        <div class="certificate-details">
-          <p><strong>Certified Developer:</strong> Soorya Sakthivel</p>
-          <p><strong>Technologies Covered:</strong> HTML, CSS, JavaScript, React.js, Node.js, MongoDB</p>
-          <p><strong>Certification Authority:</strong> Professional Development Institute</p>
-        </div>
-        <p class="certificate-note">This certificate validates comprehensive skills in full-stack web development</p>
-      </div>
+      <h2 class="certificate-title">Full Stack Development Certificate</h2>
+      <img src="f.png" alt="Full Stack Development Certificate" class="certificate-image">
+      <p class="certificate-note">Full Stack Development Certification</p>
     </div>
   </div>
 
   <div id="ai-cert" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="certificate-display">
-        <i class="fas fa-brain certificate-icon"></i>
-        <h2>Skill Camp on Artificial Intelligence</h2>
-        <div class="certificate-details">
-          <p><strong>Certified Participant:</strong> Soorya Sakthivel</p>
-          <p><strong>Skills Covered:</strong> Machine Learning, Deep Learning, Neural Networks, AI Applications</p>
-          <p><strong>Certification Authority:</strong> AI Skills Institute</p>
-        </div>
-        <p class="certificate-note">This certificate demonstrates proficiency in artificial intelligence concepts and applications</p>
-      </div>
+      <h2 class="certificate-title">Skill Camp on Artificial Intelligence</h2>
+      <img src="a.png" alt="AI Certificate" class="certificate-image">
+      <p class="certificate-note">Artificial Intelligence Skill Camp Certification</p>
     </div>
   </div>
 
   <div id="redhat-cert" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="certificate-display">
-        <i class="fab fa-redhat certificate-icon"></i>
-        <h2>Red Hat Certified System Administrator</h2>
-        <div class="certificate-details">
-          <p><strong>Certified Administrator:</strong> Soorya Sakthivel</p>
-          <p><strong>Skills Covered:</strong> Linux Administration, System Security, Network Configuration</p>
-          <p><strong>Certification Authority:</strong> Red Hat, Inc.</p>
-        </div>
-        <p class="certificate-note">This certificate validates expertise in Red Hat Enterprise Linux system administration</p>
-      </div>
+      <h2 class="certificate-title">Red Hat Certified System Administrator</h2>
+      <img src="r.png" alt="Red Hat Certificate" class="certificate-image">
+      <p class="certificate-note">Red Hat System Administrator Certification</p>
     </div>
   </div>
 
   <div id="arduino-cert" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="certificate-display">
-        <i class="fas fa-microchip certificate-icon"></i>
-        <h2>Application Development Using Arduino</h2>
-        <div class="certificate-details">
-          <p><strong>Certified Developer:</strong> Soorya Sakthivel</p>
-          <p><strong>Skills Covered:</strong> Arduino Programming, IoT Development, Sensor Integration</p>
-          <p><strong>Certification Authority:</strong> Electronics Development Board</p>
-        </div>
-        <p class="certificate-note">This certificate confirms proficiency in Arduino-based application development</p>
-      </div>
+      <h2 class="certificate-title">Application Development Using Arduino</h2>
+      <img src="ar.png" alt="Arduino Certificate" class="certificate-image">
+      <p class="certificate-note">Arduino Application Development Certification</p>
     </div>
   </div>
 
   <div id="oracle-cert1" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="certificate-display">
-        <i class="fas fa-database certificate-icon"></i>
-        <h2>Oracle Certified Foundations Associate</h2>
-        <div class="certificate-details">
-          <p><strong>Certified Associate:</strong> Soorya Sakthivel</p>
-          <p><strong>Skills Covered:</strong> Database Fundamentals, SQL, Oracle Database Management</p>
-          <p><strong>Certification Authority:</strong> Oracle Corporation</p>
-        </div>
-        <p class="certificate-note">This certificate validates foundational knowledge in Oracle database technologies</p>
-      </div>
+      <h2 class="certificate-title">Oracle Certified Foundations Associate</h2>
+      <img src="o.png" alt="Oracle Foundations Certificate" class="certificate-image">
+      <p class="certificate-note">Oracle Database Foundations Certification</p>
     </div>
   </div>
 
   <div id="oracle-cert2" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <div class="certificate-display">
-        <i class="fas fa-server certificate-icon"></i>
-        <h2>Oracle Certified Professional Associate</h2>
-        <div class="certificate-details">
-          <p><strong>Certified Professional:</strong> Soorya Sakthivel</p>
-          <p><strong>Skills Covered:</strong> Advanced Database Administration, Performance Tuning, Enterprise Management</p>
-          <p><strong>Certification Authority:</strong> Oracle Corporation</p>
-        </div>
-        <p class="certificate-note">This certificate demonstrates advanced proficiency in Oracle database administration</p>
-      </div>
+      <h2 class="certificate-title">Oracle Certified Professional Associate</h2>
+      <img src="oo.png" alt="Oracle Professional Certificate" class="certificate-image">
+      <p class="certificate-note">Oracle Database Professional Certification</p>
     </div>
   </div>
 
